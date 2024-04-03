@@ -1,0 +1,50 @@
+// Message.js
+
+import React, { useState } from 'react';
+import axios from 'axios';
+import Email from './Email'; // Import the Email component
+
+const Message = ({ senderEmail, receiverEmail, bookId }) => {
+  const [messageContent, setMessageContent] = useState('');
+  const [isMessageSent, setIsMessageSent] = useState(false);
+
+  const handleMessageSend = async () => {
+    try {
+      await axios.post('http://localhost:3001/messages', {
+        sender_email: senderEmail,
+        receiver_email: receiverEmail,
+        book_id: bookId,
+        message_content: messageContent
+      });
+      // Clear input after sending message
+      setMessageContent('');
+      // Set state to indicate message has been sent
+      setIsMessageSent(true);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      // Handle error gracefully
+    }
+  };
+
+  return (
+    <div className="message">
+      <input
+        type="text"
+        placeholder="Enter your message"
+        value={messageContent}
+        onChange={(e) => setMessageContent(e.target.value)}
+      />
+      <button onClick={handleMessageSend}>Send</button>
+      {/* Render Email component conditionally */}
+      {isMessageSent && <Email senderEmail={senderEmail} receiverEmail={receiverEmail} />}
+    </div>
+  );
+};
+
+export default Message;
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+

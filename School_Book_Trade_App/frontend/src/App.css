@@ -1,0 +1,466 @@
+
+/* App.css */
+
+:root {
+  --theme-color: royalblue;
+
+}
+
+/* Add styles to handle responsiveness */
+@media only screen and (max-width: 600px) {
+  .post-container, .Sign-Container  {
+    padding: 10px;
+  }
+}
+
+/* Additional styles for iPhone compatibility */
+@media only screen and (max-device-width: 600px) {
+  .post-container, .Sign-Container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+height: 100%;
+}
+
+button {
+  
+  width: 100%;
+  padding: 10px;
+  background-color:var(--theme-color);
+  color: white;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease; 
+}
+
+button:hover {
+  background-color: #0056b3;
+  color: white;
+  transform: scale(1.05); 
+}
+
+
+
+/* Nav.css -----------------------------------------------------------------------------------*/
+@media only screen and (max-device-width: 799px) {
+
+.nav-and-title {
+  display: flex;
+  align-items: center;
+  margin: 1%; /* Adjust margin as needed */
+}
+
+.nav-and-title h1 {
+  margin-left: 10px; /* Adjust margin as needed */
+}
+
+h3.User{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+nav {
+display: flex;
+flex-direction: column;
+}
+
+nav > div {
+display: flex;
+flex-direction: column;
+align-items: center; /* Center items horizontally */
+}
+
+
+
+.nav-container {
+position: relative;
+}
+
+nav {
+position: absolute;
+top: 0;
+left: -550px; /* Initial position off-screen */
+width: 250px; /* Adjust width as needed */
+height: 100vh; /* Adjust height as needed */
+background-color: #ffffff; /* Background color for the navigation */
+transition: left 0.3s ease; /* Transition for sliding animation */
+}
+
+.nav-visible {
+left: 0; /* Slide in from the left */
+width:  320px;
+
+}
+
+.logo {
+cursor: pointer;
+margin: 5px;
+}
+ .nav-buttons button{
+  
+  width: 70%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Adding transition */
+  margin-bottom: 15px;
+}
+
+.nav-buttons button:hover {
+  background-color: #043fbe;
+  color: white;
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+}
+
+/* for other types of screen */
+@media only screen and (min-device-width: 800px) {
+
+.nav-and-title{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  height: 100%;
+  padding: auto;
+}
+
+.nav-buttons button{
+  margin: .1cm;
+}
+
+  
+.nav-buttons {
+  display: flex; /* Use flexbox to arrange buttons horizontally */
+  justify-content: space-around; /* Distribute space evenly between buttons */
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.logo {
+display: none;
+}
+
+}
+
+ /* signIn and SignUp ---------------------------------------------------------------------------*/
+
+ .Sign-Container {
+  max-width: 400px;
+  margin: 3px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #e2e2e2;
+}
+
+.Sign-Container input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+  border-color: var(--theme-color); /* Change border color on hover */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: var(--theme-color); 
+
+}
+.Sign-Container p.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Board.css -------------------------------------------------------------------*/
+
+.Search button{
+  width: 20%;
+  padding: 10px;
+  background-color:var(--theme-color);
+  color: white;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.Search input{
+
+  width:  60%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-sizing: border-box;
+} 
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+.card button {
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+button.delete{
+  background-color: rgb(194, 0, 0);
+  width: 27%;
+}
+
+@media only screen and (max-device-width: 799px) {  
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  
+}
+
+
+
+
+
+}
+
+/* @media screen and (min-width:) */
+@media only screen and (min-device-width: 800px) {
+  .board {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    align-items: left;
+  
+  }
+
+  .Search{
+    align-items: left;
+    width: 100%;
+    height: 100%;
+    padding: auto;
+  }
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+  height: 100%;
+  margin: 10px;
+  }
+
+button.delete{
+  background-color: rgb(194, 0, 0);
+  width: 27%;
+}
+
+}
+
+
+/* Post.css ------------------------------------------------------------------------------ */
+
+.post-container {
+  max-width: 500px; /* Adjust as needed */
+  margin: auto auto;
+  padding: 20px;
+}
+
+.post-container h2 {
+  color: royalblue;
+}
+
+.post-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgb(0, 0, 0);
+}
+
+
+.post-container input[type="textarea"]{
+  width: 80%;
+  height: 70px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid royalblue;
+  border-radius: 5px;
+}
+
+
+
+.post-container input[type="text"],
+.post-container input[type="number"],
+.post-container input[type="file"],
+.post-container button {
+  width: 80%;
+  height: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid royalblue;
+  border-radius: 5px;
+}
+
+.post-container button {
+  background-color: royalblue;
+  color: white;
+  cursor: pointer;
+  width: 80%;
+  height: inherit;
+  
+}
+
+.post-container input[type="file"] {
+  border: none;
+  padding: 0;}
+
+/* Offers.css ------------------------------------------------------------------------*/
+
+.Offers-container{
+  max-width: 350px; /* Adjust as needed */
+  margin: 0 400px;
+  padding: 20px;
+}
+.offer-item {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 1px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.offer-details {
+  background: linear-gradient(90deg, rgb(45, 70, 172) 35%, rgba(0, 118, 197, 0.709) 100%);  padding: 5px;
+  border-radius: 15px;
+  color: rgb(255, 255, 255);
+}
+.offer-details h3 {
+  flex: 1; /* Allow h3 to grow and take up remaining space */
+  margin: 0
+}
+
+.offer-details p {
+  margin: 0; /* Remove default margins for <p> elements */
+}
+
+
+
+.chat-window {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 0px;
+}
+
+
+
+
+
+
+
+
+/* Chat.css ------------------------------------------------------------------------*/
+
+.message button{
+    width: 25%;
+    border-radius: 12px;
+    margin-left:  4px;
+    padding: 5px;
+}
+.message input {
+    width: 60%;
+    border: 1px solid #ccc;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.message-container {
+  margin-bottom: 20px;
+}
+
+.message-container.selected {
+ margin: 0;
+}
+
+.message-container.not-selected {
+  background-color: #ffffff;
+  margin: 0;
+}
+
+.message-info {
+  font-size: 12px;
+  color: #999999;
+  margin: 0;
+}
+
+.sender-info {
+  font-size: 12px;
+  font-style: italic;
+  color: #999999;
+  margin: 0;
+}
+
+.message-content {
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 70%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.message-sender {
+  background-color: #007aff;
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+.message-recipient {
+  background-color: #e5e5ea;
+  color: #000000;
+  align-self: flex-start;
+}
+
+.timestamp {
+  color: transparent;
+  font-size: 10px;
+  
+}
+
